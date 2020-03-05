@@ -4,7 +4,7 @@ document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    document.getElementById('write_out').textContent += charStr;
+    document.getElementById('write_out').textContent = document.getElementById('write_out').textContent.substr (0,cp)+charStr;
 };
 (function (global) { 
     if(typeof (global) === "undefined") {
