@@ -1,3 +1,5 @@
+var c_p = 0
+
 document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
