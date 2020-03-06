@@ -2,6 +2,7 @@ var c_p = 0;
 var words = null;
 var errored_word = 0;// 0 = none 1 = first word etc
 function start(){
+	document.getElementById('write_out').innerHTML = fuckyou.f;
 	document.getElementById('write_in').innerHTML = null;
 }
 
@@ -58,6 +59,7 @@ function replaceNbsps(str) {
   return str.replace(re, " ");
 }
 function allnumeric(str){
+	
     return !isNaN(parseFloat(str)) && isFinite(str);
 } 
 
@@ -138,12 +140,62 @@ function enter(){
 		document.getElementById('write_out').innerHTML += "<br>color -f -b<br>clear -t<br>write -t<br>";
 	} else if(words[0] == "color"){ // color
 		if(words[1] == "-f"){ // font
-		
+			if(words[2] == "red"){
+				document.getElementById('terminal_text').style.color = "red";
+			}else if(words[2] == "green"){
+				document.getElementById('terminal_text').style.color = "green";
+			}else if(words[2] == "blue"){
+				document.getElementById('terminal_text').style.color = "blue";
+			}else if(allnumeric(words[2])){
+				var r = words[2];
+				var g = 0;
+				var b = 0;
+				if(allnumeric(words[3])){
+					g = words[3];
+					if(allnumeric(words[4])){
+						b = words[4]
+					}else{
+					errored_word = 5;
+					}
+				}else{
+					errored_word = 4;
+				}
+				if(errored_word < 1){
+
+					document.getElementById('terminal_text').style.color = "rgb("+r+","+g+","+b+")";
+				}
+			}else{
+				errored_word = 3;
+			}
 		}else if(words[1] == "-b"){ // background
 			if(words[2] == "red"){
-				document.body.style.backgroundColor = red;
+				document.body.style.backgroundColor = "red";
+			}else if(words[2] == "green"){
+				document.body.style.backgroundColor = "green";
+			}else if(words[2] == "blue"){
+				document.body.style.backgroundColor = "blue";
+			}else if(allnumeric(words[2])){
+				var r = words[2];
+				var g = 0;
+				var b = 0;
+				if(allnumeric(words[3])){
+					g = words[3];
+					if(allnumeric(words[4])){
+						b = words[4]
+					}else{
+					errored_word = 5;
+					}
+				}else{
+					errored_word = 4;
+				}
+
+				document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+			}else{
+				errored_word = 3;
 			}
-		}
+		}else{
+				errored_word = 2;
+			}
 	} else{
 		errored_word = 1;
 	}

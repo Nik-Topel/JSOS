@@ -10,11 +10,14 @@ body{
 	font-family : Consolas;
 	font-size: 14px;
 }
+.write_in{
+	margin-left : -2px;
+}
 .input_cursor {
-	margin-left : -5px;
+	margin-left : -3px;
 	animation : input_cursor_blink 1s step-end infinite;
 }
 @keyframes input_cursor_blink {
-	from, to { color : transparent}
-	50% { color : green }
+	from, to { opacity : 0}
+	50% { opacity : 1 }
 }
