@@ -1,3 +1,20 @@
 body{
-   bgcolor : black;
+   background-color: black;
+}
+@font-face {
+	
+}
+.terminal_text {
+	position: absolute;
+	color : green;
+	font-family : Consolas;
+	font-size: 14px;
+}
+.cursor {
+	margin-left -10px;
+	font-size: 14px;
+	background-color: green;
+	color: green;
+	position: relative;
+	opacity: 0.5;
 }
