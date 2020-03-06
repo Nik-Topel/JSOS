@@ -5,7 +5,7 @@
 		<script src="terminal.js"></script> 
 	</head>
 
-	<body>
+	<body onload="start()">
 		<div class="terminal_text">
 		<span id="write_out">
 			JSOS Version 1.0<br>
@@ -13,7 +13,10 @@
 		</span><br>
 		JSOS:>
 		<span id="write_in" class="write_in">
-		&nbsp;
+		
+		</span>
+		<span id="input_cursor" class="input_cursor">
+		_
 		</span>
 		</div>
 	</body>

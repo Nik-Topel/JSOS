@@ -10,11 +10,11 @@ body{
 	font-family : Consolas;
 	font-size: 14px;
 }
-.cursor {
-	margin-left -10px;
-	font-size: 14px;
-	background-color: green;
-	color: green;
-	position: relative;
-	opacity: 0.5;
+.input_cursor {
+	margin-left : -5px;
+	animation : input_cursor_blink 1s step-end infinite;
+}
+@keyframes input_cursor_blink {
+	from, to { color : transparent}
+	50% { color : green }
 }
