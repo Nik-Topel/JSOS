@@ -14,7 +14,7 @@ function start(){
 		c_p = parseInt(localStorage.c_p);
 	}else{
 		localStorage.setItem("t_i","");
-		localStorage.setItem("c_p",0);
+		localStorage.setItem("c_p","0");
 	}
 	if(localStorage.r_f != null && localStorage.g_f != null && localStorage.b_f != null){
 		document.getElementById('terminal_text').style.color = "rgb(" + parseInt(localStorage.r_f) + "," + parseInt(localStorage.g_f) + "," + parseInt(localStorage.b_f) + ")";
@@ -129,7 +129,7 @@ function enter(){
 			if(allnumeric(words[2])){ // number
 				var a = parseFloat(words[0]) + parseFloat(words[2]);
 				document.getElementById('write_out').innerHTML += "<br>";
-				document.getElementById('write_out').innerHTML += a;
+				document.getElementById('write_out').innerHTML += words[0]+ " + " + words[2] + " = " + a;
 				document.getElementById('write_out').innerHTML += "<br>";
 				localStorage.setItem("t_o",document.getElementById('write_out').innerHTML);
 			}else{
@@ -139,7 +139,7 @@ function enter(){
 			if(allnumeric(words[2])){ // number
 				var a = parseFloat(words[0]) * parseFloat(words[2]);
 				document.getElementById('write_out').innerHTML += "<br>";
-				document.getElementById('write_out').innerHTML += a;
+				document.getElementById('write_out').innerHTML += words[0]+ " + " + words[2] + " = " + a;
 				document.getElementById('write_out').innerHTML += "<br>";
 				localStorage.setItem("t_o",document.getElementById('write_out').innerHTML);
 			}else{
@@ -149,7 +149,7 @@ function enter(){
 			if(allnumeric(words[2])){ // number
 				var a = parseFloat(words[0]) - parseFloat(words[2]);
 				document.getElementById('write_out').innerHTML += "<br>";
-				document.getElementById('write_out').innerHTML += a;
+				document.getElementById('write_out').innerHTML += words[0]+ " + " + words[2] + " = " + a;
 				document.getElementById('write_out').innerHTML += "<br>";
 				localStorage.setItem("t_o",document.getElementById('write_out').innerHTML);
 			}else{
@@ -159,7 +159,7 @@ function enter(){
 			if(allnumeric(words[2])){ // number
 				var a = parseFloat(words[0]) / parseFloat(words[2]);
 				document.getElementById('write_out').innerHTML += "<br>";
-				document.getElementById('write_out').innerHTML += a;
+				document.getElementById('write_out').innerHTML += words[0]+ " + " + words[2] + " = " + a;
 				document.getElementById('write_out').innerHTML += "<br>";
 				localStorage.setItem("t_o",document.getElementById('write_out').innerHTML);
 			}else{
